@@ -1,0 +1,15 @@
+# PZ Art section: industry_bunker_01_4 (group industry_bunker_01_4, cell 0,0,0); pz frame, tile-centre origin
+mtllib i0-model.mtl
+v -0.5 -0.5 1.632993
+v -0.5 0.5 1.632993
+v 0.5 0.5 0.816497
+v 0.5 -0.5 0.816497
+vt 0 1
+vt 0 0
+vt 1 0
+vt 0 1
+vt 1 0
+vt 1 1
+usemtl atlas
+f 3/3 2/2 1/1
+f 4/6 3/5 1/4

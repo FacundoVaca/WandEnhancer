@@ -1,0 +1,18 @@
+# PZ Art section: floor_carpet_motif_5 (group floor_carpet_motif_5, cell 0,0,0); pz frame, tile-centre origin
+mtllib i0-model.mtl
+v 0.5 0.5 0
+v 0.5 -0.5 0
+v -0.5 -0.5 0
+v -0.5 0.5 0
+vt 1 0
+vt 1 1
+vt 0 1
+vt 0 0
+vt 1 0
+vt 0 1
+usemtl atlas
+f 3/3 2/2 1/1
+f 3/6 1/5 4/4
+
+f 1/1 2/2 3/3
+f 4/4 1/5 3/6

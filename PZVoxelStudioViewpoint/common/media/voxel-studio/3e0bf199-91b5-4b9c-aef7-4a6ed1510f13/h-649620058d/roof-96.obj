@@ -1,0 +1,9 @@
+# PZ Voxel Studio hand model: location_military_tent_01_96: eave flap: drawn by the roof eave overhang, 4 mm buried stub
+mtllib roof-96-rp.mtl
+usemtl atlas
+v -0.0020 -0.0010 -0.0300
+v 0.0020 -0.0010 -0.0300
+v 0.0000 0.0020 -0.0300
+vt 0.125000 0.500000
+vn 0.0000 0.0000 1.0000
+f 1/1/1 2/1/1 3/1/1

@@ -1,0 +1,8 @@
+# PZ Art section: location_shop_mall_signs_01_125 (group S, cell 1,0,0); pz frame, tile-centre origin
+mtllib i0-s1-rp.mtl
+usemtl atlas
+v 0 0.001 0.0005
+v 0.001 0 0.0005
+v 0 0 0.0005
+vt 0.000000 0.500000
+f 1/1 2/1 3/1

@@ -1,0 +1,4 @@
+newmtl atlas
+Kd 1 1 1
+d 1
+map_Kd leaves-small-green-1-rp-texture.png

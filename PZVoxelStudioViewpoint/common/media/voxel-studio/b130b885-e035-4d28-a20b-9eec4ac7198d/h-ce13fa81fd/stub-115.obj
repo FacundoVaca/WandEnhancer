@@ -1,0 +1,9 @@
+# PZ Voxel Studio hand model: penitentiary arch stub location_community_police_01_115 (4 mm, hidden inside the arch; only stops PZ3D drawing a photo box)
+mtllib stub-115-rp.mtl
+usemtl atlas
+v -0.07200 -0.00100 2.44137
+v -0.06800 -0.00100 2.44137
+v -0.07000 0.00200 2.44137
+vt 0.187340 0.500000
+vn 0.0000 0.0000 1.0000
+f 1/1/1 2/1/1 3/1/1

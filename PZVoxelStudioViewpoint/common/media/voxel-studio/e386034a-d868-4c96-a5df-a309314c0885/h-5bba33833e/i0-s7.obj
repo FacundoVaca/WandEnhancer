@@ -1,0 +1,10 @@
+# PZ Art section: appliances_laundry_01_23 (group E, cell 0,0,0); pz frame, tile-centre origin
+mtllib i0-s7-rp.mtl
+usemtl atlas
+v -0.4175 -0.134 1.8995
+v -0.3525 -0.134 1.8995
+v -0.3525 -0.134 2.3495
+v -0.4175 -0.134 2.3495
+vt 0.125000 0.500000
+f 1/1 2/1 3/1
+f 3/1 4/1 1/1

@@ -1,0 +1,3 @@
+newmtl stairs
+Kd 1 1 1
+map_Kd model-vp90-0.088_0.05_0_1-stairs-texture.png

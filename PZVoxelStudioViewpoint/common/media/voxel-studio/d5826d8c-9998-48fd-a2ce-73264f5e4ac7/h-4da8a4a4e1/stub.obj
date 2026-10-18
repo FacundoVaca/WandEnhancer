@@ -1,0 +1,11 @@
+# PZ Voxel Studio hand model: camping tent companion tile: one 4 mm triangle buried 3 cm under the ground; it draws nothing, it only stops PZ3D drawing its "example" photo box for this sprite
+mtllib stub-rp.mtl
+usemtl atlas
+v -0.0020 -0.0010 0.0000
+v 0.0020 -0.0010 0.0000
+v 0.0000 0.0020 0.0000
+vt 0.125600 0.500000
+vn 0.0000 0.0000 1.0000
+vn 0.0000 0.0000 -1.0000
+f 1/1/1 2/1/1 3/1/1
+f 1/1/2 3/1/2 2/1/2

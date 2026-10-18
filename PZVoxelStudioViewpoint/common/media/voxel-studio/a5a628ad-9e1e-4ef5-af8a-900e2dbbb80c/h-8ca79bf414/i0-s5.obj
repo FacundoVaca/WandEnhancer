@@ -1,0 +1,13 @@
+# PZ Art section: location_shop_greenes_01_40 (group E, cell 0,4,0); pz frame, tile-centre origin
+mtllib i0-s5-rp.mtl
+usemtl atlas
+v -0.317 0.092 0.010209
+v -0.417 0.092 0.010209
+v -0.417 0.092 0.760209
+v -0.317 0.092 0.760209
+vt 0.034022 0.021531
+vt 0.256630 0.021531
+vt 0.256630 0.975543
+vt 0.034022 0.975543
+f 1/1 2/2 3/3
+f 3/3 4/4 1/1

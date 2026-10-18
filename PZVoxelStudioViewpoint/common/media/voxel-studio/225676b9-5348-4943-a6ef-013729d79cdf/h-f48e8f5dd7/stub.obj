@@ -1,0 +1,9 @@
+# water_tank_* companion piece: one 4 mm triangle hidden inside the closed tank; it only stops PZ3D drawing an old fragment or the "example" photo box for this sprite.
+mtllib stub-rp.mtl
+usemtl atlas
+v -0.002 -0.001 0
+v 0.002 -0.001 0
+v 0 0.002 0
+vt 0.125000 0.500000
+vn 0.0000 0.0000 1.0000
+f 1/1/1 2/1/1 3/1/1

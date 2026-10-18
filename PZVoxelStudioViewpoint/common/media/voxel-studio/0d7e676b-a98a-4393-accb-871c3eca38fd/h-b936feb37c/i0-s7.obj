@@ -1,0 +1,13 @@
+# PZ Art section: location_restaurant_generic_01_55 (group E, cell 0,0,0); pz frame, tile-centre origin
+mtllib i0-s7-rp.mtl
+usemtl atlas
+v -0.3709 -0.419171 1.85825
+v -0.3709 -0.419171 2.29175
+v -0.4219 -0.419171 2.29175
+v -0.4219 -0.419171 1.85825
+vt 0.020278 0.819168
+vt 0.698470 0.819168
+vt 0.698470 0.180832
+vt 0.020278 0.180832
+f 1/1 2/2 3/3
+f 3/3 4/4 1/1
