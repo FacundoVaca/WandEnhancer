@@ -87,19 +87,35 @@ def shapes_mesh(shapes):
     return tris
 
 def wall_mesh(img,side):
-    """A plate on the north (side 'N') or west ('W') wall covering the sprite's art."""
+    """A plate on the tile's N, W, S or E wall covering the sprite's art."""
     a=np.asarray(img)[:,:,3];ys,xs=np.nonzero(a>8)
     if len(xs)==0: return []
-    sx,sy=xs+0.5,ys+0.5;c=-0.5+WALL
-    if side=='N':   # plane Y=c: X from sx, Z from sy
+    sx,sy=xs+0.5,ys+0.5
+    c=-0.5+WALL if side in('N','W') else 0.5-WALL
+    if side in('N','S'):   # plane Y=c: X from sx, Z from sy
         u=(sx-64)/64+c; Z=(224+32*(u+c)-sy)/ZPX; P=lambda u,z:(u,c,z)
-    else:           # plane X=c: Y from sx
+    else:                  # plane X=c: Y from sx
         u=c-(sx-64)/64; Z=(224+32*(c+u)-sy)/ZPX; P=lambda u,z:(c,u,z)
     u0,u1=max(u.min()-0.01,-0.5),min(u.max()+0.01,0.5);z0,z1=max(Z.min()-0.01,0.0),Z.max()+0.01
+    if u1<=u0 or z1<=z0: return []
     q=[P(u0,z0),P(u1,z0),P(u1,z1),P(u0,z1)]
-    return [(q[0],q[1],q[2]),(q[0],q[2],q[3]),(q[0],q[2],q[1]),(q[0],q[3],q[2])]
+    return [(q[0],q[1],q[2]),(q[0],q[2],q[3])]
 
-def write_model(name,tris,img,outdir):
+def cross_mesh(img):
+    """Two crossed upright planes through the tile centre: the one square to the
+    camera carries the sprite exactly, the other the same art turned 90 degrees."""
+    a=np.asarray(img)[:,:,3];ys,xs=np.nonzero(a>8)
+    if len(xs)<12: return [],None
+    x0,x1=xs.min(),xs.max()+1;y0,y1=ys.min(),ys.max()+1
+    t0,t1=(x0-64)/128,(x1-64)/128            # plane (t,-t,z): sx=64+128t
+    z0,z1=max((224-y1)/ZPX,0.0),(224-y0)/ZPX  # sy=224-ZPX*z
+    A=[(t0,-t0,z0),(t1,-t1,z0),(t1,-t1,z1),(t0,-t0,z1)]
+    B=[(t0,t0,z0),(t1,t1,z0),(t1,t1,z1),(t0,t0,z1)]
+    tris=[(A[0],A[1],A[2]),(A[0],A[2],A[3]),(B[0],B[1],B[2]),(B[0],B[2],B[3])]
+    uvsrc={B[i]:A[i] for i in range(4)}      # B samples where A does
+    return tris,uvsrc
+
+def write_model(name,tris,img,outdir,uvsrc=None,note="generated from the game tile geometry"):
     """Writes outdir/model.obj, model.mtl, texture.png. Returns False if empty."""
     if not tris: return False
     a=np.asarray(img)[:,:,3];ys,xs=np.nonzero(a>0)
@@ -112,14 +128,16 @@ def write_model(name,tris,img,outdir):
     def vid(p):
         k=tuple(round(v,5) for v in p)
         if k not in vs:
-            vs[k]=len(vl)+1;vl.append(k);sx,sy=proj(*p)
+            vs[k]=len(vl)+1;vl.append(k);sx,sy=proj(*(uvsrc.get(p,p) if uvsrc else p))
             tl.append((min(max((sx-x0)/tw,0),1),min(max(1-(sy-y0)/th,0),1)))
         return vs[k]
     for t in tris:
         ids=[vid(p) for p in t]
         if len(set(ids))==3: fl.append(ids)
+    if not fl:
+        import shutil;shutil.rmtree(outdir,ignore_errors=True);return False
     with open(os.path.join(outdir,'model.obj'),'w') as f:
-        f.write('# %s: generated from the game tile geometry, textured by iso projection of its sprite; pz frame, tile-centre origin\nmtllib model.mtl\n'%name)
+        f.write('# %s: %s, textured by iso projection of its sprite; pz frame, tile-centre origin\nmtllib model.mtl\n'%(name,note))
         for v in vl: f.write('v %g %g %g\n'%v)
         for t in tl: f.write('vt %.5f %.5f\n'%t)
         f.write('usemtl atlas\n')

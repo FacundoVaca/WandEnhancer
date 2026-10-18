@@ -1,0 +1,15 @@
+# location_entertainment_gallery_01_124: a plate on its W wall, textured by iso projection of its sprite; pz frame, tile-centre origin
+mtllib model.mtl
+v -0.45 -0.10844 0.86327
+v -0.45 0.5 0.86327
+v -0.45 0.5 2.45247
+v -0.45 -0.10844 2.45247
+vt 0.97952 0.14163
+vt 0.05238 0.00735
+vt 0.05238 0.86644
+vt 0.97952 1.00000
+usemtl atlas
+f 1/1 2/2 3/3
+f 1/1 3/3 4/4
+f 1/1 3/3 2/2
+f 1/1 4/4 3/3

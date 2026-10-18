@@ -1,0 +1,27 @@
+# location_shop_mall_signs_02_140: two crossed upright planes, textured by iso projection of its sprite; pz frame, tile-centre origin
+mtllib model.mtl
+v -0.5 0.5 0.68892
+v 0.5 -0.5 0.68892
+v 0.5 -0.5 0.71443
+v -0.5 0.5 0.71443
+v -0.5 -0.5 0.68892
+v 0.5 0.5 0.68892
+v 0.5 0.5 0.71443
+v -0.5 -0.5 0.71443
+vt 0.00000 0.25000
+vt 1.00000 0.25000
+vt 1.00000 0.75000
+vt 0.00000 0.75000
+vt 0.00000 0.25000
+vt 1.00000 0.25000
+vt 1.00000 0.75000
+vt 0.00000 0.75000
+usemtl atlas
+f 1/1 2/2 3/3
+f 1/1 3/3 4/4
+f 5/5 6/6 7/7
+f 5/5 7/7 8/8
+f 1/1 3/3 2/2
+f 1/1 4/4 3/3
+f 5/5 7/7 6/6
+f 5/5 8/8 7/7

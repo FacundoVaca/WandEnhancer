@@ -1,0 +1,15 @@
+# signs_one-off_05_335: a plate on its W wall, textured by iso projection of its sprite; pz frame, tile-centre origin
+mtllib model.mtl
+v -0.45 -0.28031 1.47564
+v -0.45 0.5 1.47564
+v -0.45 0.5 2.23559
+v -0.45 -0.28031 2.23559
+vt 0.98377 0.38860
+vt 0.04151 0.01591
+vt 0.04151 0.90498
+vt 0.98377 1.00000
+usemtl atlas
+f 1/1 2/2 3/3
+f 1/1 3/3 4/4
+f 1/1 3/3 2/2
+f 1/1 4/4 3/3

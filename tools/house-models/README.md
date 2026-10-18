@@ -15,3 +15,19 @@ textured by projecting every vertex back onto the tile's 2x isometric sprite.
 2. `python3 -c "import geom,json;json.dump(geom.parse('tileGeometry.txt'),open('geom.json','w'))"`
 3. Build `bound.txt` (sprites already bound by the manifests) and
    `candidates.json`, then `python3 build_houses.py`.
+
+## Every other missing sprite
+
+`build_all.py` (also needs `tileDepthTextureAssignments.txt` and
+`Tiles1x.pack`) walks every sprite in the tile definitions and in
+`Tiles2x.pack` that no manifest binds yet, and writes `generated/` plus
+`package-generated-*.properties`:
+
+- its own `tileGeometry` shapes;
+- a plate on the wall it hangs on (`attachedN/W/S/E`);
+- the geometry of the tile whose depth art it borrows;
+- otherwise two crossed upright planes carrying its art.
+
+Lit `_on` sprites are bound to their unlit sprite's model instead. Walls,
+roofs, floors, doors, windows and fences are skipped: Viewpoint and its
+companion mods draw those.
