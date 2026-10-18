@@ -1,0 +1,19 @@
+# walls_decoration_03_0: generated from the game tile geometry, textured by iso projection of its sprite; pz frame, tile-centre origin
+mtllib model.mtl
+v -0.29594 -0.45 0.05315
+v 0.5 -0.45 0.05315
+v 0.5 -0.45 2.43334
+v -0.29594 -0.45 2.43334
+vt 0.01623 0.12224
+vt 0.97736 0.00266
+vt 0.97736 0.87856
+vt 0.01623 0.99814
+usemtl atlas
+f 1/1 2/2 3/3
+f 1/1 3/3 4/4
+f 1/1 3/3 2/2
+f 1/1 4/4 3/3
+f 1/1 3/3 2/2
+f 1/1 4/4 3/3
+f 1/1 2/2 3/3
+f 1/1 3/3 4/4

@@ -1,0 +1,15 @@
+# signs_one-off_05_333: a plate on its N wall, textured by iso projection of its sprite; pz frame, tile-centre origin
+mtllib model.mtl
+v -0.5 -0.45 0.13608
+v 0.03656 -0.45 0.13608
+v 0.03656 -0.45 0.51329
+v -0.5 -0.45 0.51329
+vt 0.04865 0.33480
+vt 0.97676 0.00000
+vt 0.97676 0.61031
+vt 0.04865 0.99186
+usemtl atlas
+f 1/1 2/2 3/3
+f 1/1 3/3 4/4
+f 1/1 3/3 2/2
+f 1/1 4/4 3/3
